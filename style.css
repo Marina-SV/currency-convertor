@@ -101,6 +101,7 @@ main {
     width: 260px;
     margin-top: 8px;
     border: 0.5px solid #C6C6C6;
+    border-radius: 3px;
 }
 
 select {
@@ -140,4 +141,9 @@ select {
     position: relative;
     bottom: 25px;
     cursor: pointer;
+}
+
+.main__default-cur.active {
+    background-color: #833ae0;
+    color: white;
 }
