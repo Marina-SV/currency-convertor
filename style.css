@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+} 
+
+/* body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+} */
+
+header {
+    display: flex;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #F5F5F6;
+}
+
+.header__container {
+margin: 0 auto;
+width: 1050px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.header__bank-logo {
+    height: 23px;
+    width: 89px;
+}
+
+.header__options {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    text-transform: uppercase;
+    color: #959BA4;
+}
+
+li {
+    padding-left: 25px;
+    cursor: pointer;
+}
+li:hover {
+    color: black;
+}
+
+li:first-child {
+    padding-left: 0;
+}
+
+.header__log-in-button {
+    height: 33px;
+    width: 58px;
+    background-color: white;
+    border: 0;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+main {
+    width: 640px;
+    margin: 50px auto 0;
+}
+
+.main__h2 { 
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: 106px;
+}
+
+.main__flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 640px;
+}
+
+.main__exchange-intro{
+    color: #9F9F9F;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 33px;
+}
+
+.main__currencies-list-for-exchange, .main__currencies-list-to-get-exchanged {
+    display: flex;
+    width: 260px;
+    margin-top: 8px;
+    border: 0.5px solid #C6C6C6;
+}
+
+select {
+    height: 346px;
+}
+
+.main__default-cur, select{
+    width: 52px;
+    height: 30px;
+    color: #C6C6C6; 
+    background-color: white;
+    border: 0.5px solid #C6C6C6;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.main__default-cur:hover, select:hover {
+    background-color: #833ae0;
+    color: white;
+}
+
+.main__input-for-exchange, .main__input-to-get-exchanged {
+    width: 260px;
+    height: 102px;
+    border: 1px solid #C6C6C6;
+    border-radius: 3px;
+    margin-top: 20px;
+} 
+
+.main__toggle {
+    /* width: 46px;
+    height: 38px; */
+    font-size: 36px;
+    background-color: white;
+    border:0;
+    position: relative;
+    bottom: 25px;
+    cursor: pointer;
+}
