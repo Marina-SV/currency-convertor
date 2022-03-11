@@ -113,7 +113,7 @@ select {
     height: 30px;
     color: #C6C6C6; 
     background-color: white;
-    border: 0.5px solid #C6C6C6;
+    border: 1px solid #C6C6C6;
     font-size: 12px;
     font-weight: 400;
     cursor: pointer;
@@ -124,13 +124,24 @@ select {
     color: white;
 }
 
+select:hover option {
+    background-color: white;
+    color: #C6C6C6;
+}
+
+.convertor__input {
+    width: 100%;
+    font-size: 36px;
+    font-weight: 700;
+    border: 0;
+}
+/* 
 .main__input-for-exchange, .main__input-to-get-exchanged {
-    width: 260px;
-    height: 102px;
-    border: 1px solid #C6C6C6;
-    border-radius: 3px;
-    margin-top: 20px;
-} 
+    width: 100%;
+    font-size: 36px;
+    font-weight: 700;
+    border: 0;
+}  */
 
 .main__toggle {
     /* width: 46px;
@@ -143,7 +154,23 @@ select {
     cursor: pointer;
 }
 
-.main__default-cur.active {
+.active {
     background-color: #833ae0;
     color: white;
+}
+
+.convertor__window {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 14px;
+    margin-top: 20px;
+    width: 260px;
+}
+
+.convertor__rate {
+    margin-top: 20px;
+    color: #C6C6C6;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
 }
