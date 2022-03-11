@@ -56,9 +56,52 @@ class Convertor {
         this.switchButton.addEventListener('click', (e) => {
             e.preventDefault()
 
-            let a = input1
-            input1 = input2
-            input2 = a
+            let a = this.fromInput.value
+            this.fromInput.value = this.toInput.value
+            this.toInput.value = a    // замена значений input
+
+            let b = this.fromRate.textContent
+            this.fromRate.textContent = this.toRate.textContent
+            this.toRate.textContent = b // замена значений подстрочника
+
+            let fromActiveButton = this.from.querySelector(".active").value
+            let toActiveButton = this.to.querySelector(".active").value
+            this.fromCurrency = toActiveButton
+            this.toCurrency = fromActiveButton
+
+            this.from.querySelector(".active").classList.remove("active");
+            this.to.querySelector(".active").classList.remove("active");
+
+            this.from.querySelectorAll('.main__default-cur').forEach(btn => {
+                if (btn.value === toActiveButton) {
+                    btn.classList.add('active')
+                }
+            }) // замена свечения у правого стандартного button
+
+            this.to.querySelectorAll('.main__default-cur').forEach(btn => {
+                if (btn.value === fromActiveButton) {
+                    btn.classList.add('active')
+                }
+            }) // замена свечения у правого стандартного button
+
+            if(!this.from.querySelector('.active')) {
+                this.from.querySelector('select').querySelectorAll('option').forEach(opt => {
+                    if (opt.value === toActiveButton) {
+                        this.from.querySelector('select').setAttribute('value', toActiveButton)
+                        this.from.querySelector('select').classList.add('active')
+                    }
+                })
+            } // замена свечения у правого option
+
+            if(!this.to.querySelector('.active')) {
+                this.to.querySelector('select').querySelectorAll('option').forEach(opt => {
+                    if (opt.value === fromActiveButton) {
+                        this.to.querySelector('select').setAttribute('value', fromActiveButton)
+                        this.to.querySelector('select').classList.add('active')
+                    }
+                })
+            } // замена свечения у левого option
+
         })
 
         this.init();
@@ -91,7 +134,6 @@ class Convertor {
     async  initSupportedSymbols() {
         const supportedSymbols = await ConvertorAPI.getSupportedSymbols();
         document.querySelectorAll('select').forEach(select => {
-            console.log(select)
             select.append(...supportedSymbols.map(symbol => this.createOption(symbol)));
         })
            
@@ -119,7 +161,7 @@ class Convertor {
     //     this.toRate.textContent = this.getRateString(this.toCurrency, this.fromCurrency, rate)
     // }
 
-    // handleClickSwitchButton = a
+    
 
     handleChangeSelect = (event) => {
         if (event.target.closest('.main__for-exchange')) {
